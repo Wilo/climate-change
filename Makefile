@@ -24,6 +24,11 @@ coverage:
 	@go test -race -v ./... -coverprofile cover.out
 	@go tool cover -html cover.out
 
+# Run Benchmarking test for all directories.
+benchmark bench:
+	@clear
+	@go test ./... -benchmem -bench=".*"
+
 # end test
 
 # Clear binary folder.
